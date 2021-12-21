@@ -57,7 +57,7 @@ void process(string str, unordered_map<string, double>& person_to_balance){
 
 
 int main(){
-    
+    freopen("input.txt","r",stdin);
     unordered_map<string, double> person_to_balance;
     string line;
     while(getline(cin, line)){
