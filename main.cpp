@@ -61,12 +61,7 @@ int main(){
     unordered_map<string, double> person_to_balance;
     string line;
     while(getline(cin, line)){
-        if (line == "end"){
-            break;
-        }
-        else{
-            process(line, person_to_balance);
-        }
+        process(line, person_to_balance);
     }
     cout << "====================" << endl;
     for(auto&& [person, balance]: person_to_balance){
