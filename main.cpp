@@ -10,6 +10,24 @@
 using namespace std;
 
 
+unordered_map<string, double> city_to_tax_rate({{"New Haven", 1.0635}, {"San Diego", 1.0775}});
+string CURRENT_LOCATION = "New Haven";
+
+
+double calculate_single_item(string single_item){
+    if(single_item.size() == 0) return 0;
+    bool should_pay_tax = single_item.back() == 'A' or single_item.back() == 'a';
+    double price;
+    if(should_pay_tax){
+        single_item.pop_back();
+        price = stod(single_item) * city_to_tax_rate[CURRENT_LOCATION];
+    }
+    else{
+        price = stod(single_item);
+    }
+    return price;
+}
+
 void process(string str, unordered_map<string, double>& person_to_balance){
     istringstream ss(str);
   
@@ -21,7 +39,7 @@ void process(string str, unordered_map<string, double>& person_to_balance){
         str_list.push_back(word);
     }
 
-    double balance = stod(str_list.back()) / (str_list.size() -  1);
+    double balance = calculate_single_item(str_list.back()) / (str_list.size() -  1);
 
     for(int i = 0; i < str_list.size() - 1; i++){
         string person = str_list[i];
@@ -39,6 +57,7 @@ void process(string str, unordered_map<string, double>& person_to_balance){
 
 
 int main(){
+    
     unordered_map<string, double> person_to_balance;
     string line;
     while(getline(cin, line)){
