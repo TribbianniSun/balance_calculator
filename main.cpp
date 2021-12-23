@@ -50,9 +50,6 @@ void process(string str, unordered_map<string, double>& person_to_balance){
             person_to_balance[person] = balance;
         }
     }
-
-
-
 }
 
 
