@@ -29,6 +29,7 @@ double calculate_single_item(string single_item){
 }
 
 void process(string str, unordered_map<string, double>& person_to_balance){
+    if(str.size() == 0) return;
     istringstream ss(str);
   
     string word; // for storing each word
