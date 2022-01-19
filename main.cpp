@@ -62,9 +62,12 @@ int main(){
         process(line, person_to_balance);
     }
     cout << "====================" << endl;
+    double total_dif = 0;
     for(auto&& [person, balance]: person_to_balance){
         cout << person << " " << balance << endl;
+        total_dif += balance;
     }
+    cout << "total sum is " << total_dif << endl;
     cout << "====================" << endl;
     return 0;
 
