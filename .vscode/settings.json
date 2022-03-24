@@ -2,5 +2,8 @@
     "files.associations": {
         "unordered_map": "cpp",
         "ostream": "cpp"
-    }
+    },
+    "code-runner.executorMap": {
+        "cpp": "cd $dir && g++ -std=c++17 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    },
 }
