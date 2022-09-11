@@ -10,8 +10,8 @@
 using namespace std;
 
 
-unordered_map<string, double> city_to_tax_rate({{"New Haven", 1.0635}, {"San Diego", 1.0775}});
-string CURRENT_LOCATION = "New Haven";
+unordered_map<string, double> city_to_tax_rate({{"New Haven", 1.0635}, {"San Diego", 1.0775}, {"Mountain View", 1.0913}});
+string CURRENT_LOCATION = "Mountain View";
 
 
 double calculate_single_item(string single_item){
